@@ -1,0 +1,59 @@
+.disney-footer {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 18px 24px 35px;
+  background-color: #fff;
+  color: #111;
+  font-family: "Avenir Next", "Nunito Sans", Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.disney-footer__brand {
+  display: inline-block;
+}
+
+.disney-footer__brand img {
+  display: block;
+  width: 60px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.disney-footer__nav {
+  margin-top: 10px;
+}
+
+.disney-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.disney-footer__links--legal {
+  margin-top: 8px;
+}
+
+.disney-footer__links a {
+  color: inherit;
+  font-size: 9px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.disney-footer__links--legal a {
+  font-weight: 700;
+}
+
+.disney-footer__links a:hover {
+  text-decoration: underline;
+}
+
+.disney-footer__copyright {
+  margin-top: 8px;
+  font-size: 9px;
+  line-height: 1.2;
+}
