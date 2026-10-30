@@ -1,0 +1,23 @@
+/* Parcial 2 - Sayi Lorena Ramirez Alvarez & Samir Rosero */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+header,
+footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 1rem;
+}
