@@ -1,25 +1,32 @@
 /* Seccion Hero - Samir Rosero */
-/* Medidas tomadas del diseno (img de referencia a 2560px de ancho) */
+/* Medidas tomadas del diseno (hero de 2000px de ancho).
+   Se usan unidades cqw (1cqw = 1% del ancho del hero) para que todo
+   escale en proporcion y la imagen se vea completa en cualquier pantalla.
+   Ej: 300px en el diseno = 300 / 20 = 15cqw
+   Con max() se pone un tamano minimo para que en pantallas chicas
+   el texto y los botones no queden diminutos. */
 
 .hero {
   position: relative;
   max-width: 2000px;
-  height: 857px;
+  aspect-ratio: 2000 / 857;
   margin: 0 auto;
   overflow: hidden;
+  container-type: inline-size;
   background-color: #000;
   background-image: url("../img/banner-background.png");
   /* La imagen trae un borde negro arriba y a la derecha: se escala y se recorta */
-  background-size: 2016px auto;
-  background-position: 0 -12px;
+  background-size: 100.8% auto;
+  background-position: 0 51%;
   background-repeat: no-repeat;
 }
 
 .hero__content {
   position: absolute;
-  top: 232px;
-  left: 159px;
-  width: 568px;
+  top: calc(50% - 0.125cqw);
+  left: 22.15cqw;
+  transform: translate(-50%, -50%);
+  width: max(28.4cqw, 300px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,16 +35,17 @@
 
 .hero__logo {
   display: block;
-  width: 568px;
+  width: 100%;
   height: auto;
 }
 
 .hero__text {
-  margin-top: 6px;
+  margin-top: 0.3cqw;
   font-family: "Avenir Next", "Nunito Sans", Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: max(1cqw, 14px);
+  line-height: 1.2;
   font-weight: 500;
+  white-space: nowrap;
   color: #fff;
 }
 
@@ -45,18 +53,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
-  height: 60px;
-  border-radius: 30px;
+  width: max(15cqw, 200px);
+  height: max(3cqw, 40px);
+  border-radius: 999px;
   font-family: "Avenir Next", "Nunito Sans", Arial, Helvetica, sans-serif;
-  font-size: 19px;
+  font-size: max(0.95cqw, 14px);
   font-weight: 600;
   text-decoration: none;
   transition: filter 0.2s, background-color 0.2s;
 }
 
 .hero__btn--primary {
-  margin-top: 19px;
+  margin-top: max(0.95cqw, 12px);
   background-color: #da5047;
   color: #1c1c1c;
 }
@@ -66,11 +74,67 @@
 }
 
 .hero__btn--secondary {
-  margin-top: 15px;
+  margin-top: max(0.75cqw, 10px);
   border: 2px solid #fff;
   color: #fff;
 }
 
 .hero__btn--secondary:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Celular: el contenido pasa abajo y la imagen se centra en Blancanieves */
+@media (max-width: 768px) {
+  .hero {
+    aspect-ratio: auto;
+    min-height: 560px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 20px 40px;
+    /* 104% de alto para esconder el borde negro superior de la imagen */
+    background-size: auto 104%;
+    background-position: 58% 100%;
+  }
+
+  /* Degradado oscuro abajo para que el texto se lea sobre la foto */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0) 70%);
+  }
+
+  .hero__content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .hero__logo {
+    width: 85%;
+  }
+
+  .hero__text {
+    margin-top: 8px;
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  .hero__btn {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .hero__btn--primary {
+    margin-top: 16px;
+  }
+
+  .hero__btn--secondary {
+    margin-top: 12px;
+  }
 }

@@ -6,12 +6,40 @@
   <meta name="author" content="Sayi Lorena Ramirez Alvarez, Samir Rosero">
   <title>Parcial 2 - Desarrollo de Aplicaciones Web</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/hero.css">
 </head>
 <body>
   <header>
-    <h1>Parcial 2</h1>
-    <p>Desarrollo de Aplicaciones Web</p>
+    <nav class="navbar">
+      <a class="navbar__logo" href="#">
+        <img src="img/logo.png" alt="Disney">
+      </a>
+      <button class="navbar__toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbar-collapse">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar__collapse" id="navbar-collapse">
+        <ul class="navbar__menu">
+          <li><a class="navbar__link" href="#">DISNEY+</a></li>
+          <li><a class="navbar__link" href="#">PARKS &amp; TRAVEL</a></li>
+          <li><a class="navbar__link" href="#">MOVIES</a></li>
+          <li><a class="navbar__link" href="#">SHOP</a></li>
+          <li><a class="navbar__link" href="#">MORE</a></li>
+        </ul>
+        <a class="navbar__login" href="#">LOG IN</a>
+        <form class="navbar__search" action="#">
+          <input class="navbar__search-input" type="search" placeholder="Search" aria-label="Search">
+          <button class="navbar__search-btn" type="submit" aria-label="Buscar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <circle cx="10" cy="10" r="7.5"></circle>
+              <line x1="15.5" y1="15.5" x2="22" y2="22"></line>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </nav>
   </header>
 
   <main>
@@ -24,10 +52,6 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    <p>Sayi Lorena Ramirez Alvarez &amp; Samir Rosero</p>
-  </footer>
 
   <script src="js/main.js"></script>
 </body>
