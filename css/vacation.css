@@ -68,3 +68,75 @@
   font-weight: 700;
   text-underline-offset: 2px;
 }
+
+/* Responsive - Samir Rosero */
+
+@media (max-width: 1500px) {
+  .vacation {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Los saltos de linea manuales solo aplican al diseno de escritorio grande */
+  .vacation__description br {
+    display: none;
+  }
+}
+
+/* Tablet: texto un poco mas grande para que se lea */
+@media (max-width: 1100px) {
+  .vacation__description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .vacation__link {
+    font-size: 13px;
+  }
+}
+
+/* Celular: carrusel deslizable con scroll-snap */
+@media (max-width: 768px) {
+  .vacation {
+    padding: 16px 0 44px;
+  }
+
+  .vacation__title {
+    margin-bottom: 24px;
+    padding: 0 16px;
+    font-size: 26px;
+  }
+
+  .vacation__grid {
+    display: flex;
+    gap: 16px;
+    padding: 0 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    scrollbar-width: none;
+  }
+
+  .vacation__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 85% para que se asome la siguiente tarjeta */
+  .vacation__card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  .vacation__body {
+    padding: 20px 18px 24px;
+  }
+
+  .vacation__name {
+    font-size: 18px;
+  }
+
+  .vacation .carousel__controls {
+    display: flex;
+    margin-top: 24px;
+  }
+}
