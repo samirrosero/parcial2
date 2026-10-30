@@ -1,0 +1,153 @@
+/* Seccion de tarjetas Snow White (fondo morado) */
+/* Medidas tomadas del diseno (contenedor de 2000px de ancho) */
+
+.featured {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 50px 24px 49px;
+  background-color: #655fb1;
+}
+
+.featured__grid {
+  max-width: 1740px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.featured__card {
+  display: flex;
+  flex-direction: column;
+  background-color: #e8c75c;
+}
+
+.featured__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.featured__body {
+  padding: 36px 36px 37px;
+  text-align: center;
+  color: #000;
+  font-family: "Avenir Next", "Nunito Sans", Arial, Helvetica, sans-serif;
+}
+
+.featured__title {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.featured__text {
+  margin-top: 12px;
+  font-size: 19px;
+  line-height: 26px;
+}
+
+.featured__link {
+  display: inline-block;
+  margin-top: 38px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  text-underline-offset: 1px;
+}
+
+.featured__link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Laptop: columnas mas angostas, texto un poco mas chico */
+@media (max-width: 1600px) {
+  .featured__body {
+    padding: 28px 20px 32px;
+  }
+
+  .featured__title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .featured__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  /* El salto de linea manual solo aplica al diseno de escritorio grande */
+  .featured__text br {
+    display: none;
+  }
+
+  .featured__link {
+    margin-top: 24px;
+    font-size: 16px;
+  }
+}
+
+/* Tablet: 2 columnas */
+@media (max-width: 1100px) {
+  .featured {
+    padding: 40px 24px;
+  }
+
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Celular: carrusel deslizable con scroll-snap */
+@media (max-width: 600px) {
+  .featured {
+    padding: 24px 0;
+  }
+
+  .featured__grid {
+    display: flex;
+    gap: 16px;
+    padding: 0 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    scrollbar-width: none;
+  }
+
+  .featured__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 85% para que se asome la siguiente tarjeta */
+  .featured__card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  .featured .carousel__controls {
+    display: flex;
+  }
+
+  .featured .carousel__dot--active {
+    background-color: #e8c75c;
+  }
+
+  .featured__body {
+    padding: 24px 20px 32px;
+  }
+
+  .featured__title {
+    font-size: 22px;
+  }
+
+  .featured__text {
+    margin-top: 12px;
+    font-size: 17px;
+  }
+
+  .featured__link {
+    margin-top: 24px;
+  }
+}

@@ -6,8 +6,11 @@
   <meta name="author" content="Sayi Lorena Ramirez Alvarez, Samir Rosero">
   <title>Parcial 2 - Desarrollo de Aplicaciones Web</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/carousel.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/featured.css">
+  <link rel="stylesheet" href="css/explore.css">
   <link rel="stylesheet" href="css/coming-soon.css">
 </head>
 <body>
@@ -53,6 +56,66 @@
       </div>
     </section>
 
+    <section class="featured">
+      <div class="featured__grid" data-carousel>
+        <article class="featured__card">
+          <img class="featured__img" src="img/shop-image-1.png" alt="Rachel Zegler cantando">
+          <div class="featured__body">
+            <h3 class="featured__title">A Special Performance</h3>
+            <p class="featured__text">Rachel Zegler Performs “Waiting on a Wish” at the Castle That Inspired the Original <em>Snow White</em></p>
+            <a class="featured__link" href="#">WATCH NOW</a>
+          </div>
+        </article>
+        <article class="featured__card">
+          <img class="featured__img" src="img/shop-image-2.png" alt="Vestido de Blancanieves">
+          <div class="featured__body">
+            <h3 class="featured__title">The Art of Fairytale Fashion</h3>
+            <p class="featured__text">Legendary Costume Designer <br>Sandy Powell Brings Fairytale Fashion to the New Film</p>
+            <a class="featured__link" href="#">WATCH NOW</a>
+          </div>
+        </article>
+        <article class="featured__card">
+          <img class="featured__img" src="img/shop-image-3.png" alt="Muñeca de Blancanieves">
+          <div class="featured__body">
+            <h3 class="featured__title">Disney Store</h3>
+            <p class="featured__text">NEW Disney's Snow White 16" Limited Edition Doll</p>
+            <a class="featured__link" href="#">SHOP NOW</a>
+          </div>
+        </article>
+        <article class="featured__card">
+          <img class="featured__img" src="img/shop-image-4.png" alt="Rachel Zegler junto a un piano">
+          <div class="featured__body">
+            <h3 class="featured__title">A Musical Conversation with Pasek and Paul</h3>
+            <p class="featured__text">Rachel Zegler and the Songwriting Duo Reminisce About Bringing the Soundtrack to Life</p>
+            <a class="featured__link" href="#">WATCH NOW</a>
+          </div>
+        </article>
+      </div>
+      <div class="carousel__controls"></div>
+    </section>
+
+    <section class="explore">
+      <h2 class="explore__title">Explore More Disney+</h2>
+      <div class="explore__grid" data-carousel>
+        <article class="explore__item">
+          <img class="explore__img" src="img/disney-plus-1.png" alt="Moana 2">
+          <p class="explore__text"><em>Moana 2</em> is now available, only on Disney+.</p>
+          <a class="explore__link" href="#">AVAILABLE ON DISNEY+</a>
+        </article>
+        <article class="explore__item">
+          <img class="explore__img" src="img/disney-plus-2.png" alt="Daredevil: Born Again">
+          <p class="explore__text">Marvel Television's all-new series is now streaming on Disney+.</p>
+          <a class="explore__link" href="#">STREAM NOW</a>
+        </article>
+        <article class="explore__item">
+          <img class="explore__img" src="img/disney-plus-3.png" alt="Next on Disney+">
+          <p class="explore__text">Everything new coming to Disney+ this month!</p>
+          <a class="explore__link" href="#">LEARN MORE</a>
+        </article>
+      </div>
+      <div class="carousel__controls"></div>
+    </section>
+
     <section class="coming-soon" aria-labelledby="coming-soon-title">
       <h2 class="coming-soon__title" id="coming-soon-title">Coming Soon to Disney+</h2>
       <ul class="coming-soon__list">
@@ -95,6 +158,7 @@
     </section>
   </main>
 
+  <script src="js/carousel.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
