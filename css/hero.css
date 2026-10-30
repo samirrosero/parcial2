@@ -1,0 +1,76 @@
+/* Seccion Hero - Samir Rosero */
+/* Medidas tomadas del diseno (img de referencia a 2560px de ancho) */
+
+.hero {
+  position: relative;
+  max-width: 2000px;
+  height: 857px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #000;
+  background-image: url("../img/banner-background.png");
+  /* La imagen trae un borde negro arriba y a la derecha: se escala y se recorta */
+  background-size: 2016px auto;
+  background-position: 0 -12px;
+  background-repeat: no-repeat;
+}
+
+.hero__content {
+  position: absolute;
+  top: 232px;
+  left: 159px;
+  width: 568px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__logo {
+  display: block;
+  width: 568px;
+  height: auto;
+}
+
+.hero__text {
+  margin-top: 6px;
+  font-family: "Avenir Next", "Nunito Sans", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.hero__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 60px;
+  border-radius: 30px;
+  font-family: "Avenir Next", "Nunito Sans", Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: filter 0.2s, background-color 0.2s;
+}
+
+.hero__btn--primary {
+  margin-top: 19px;
+  background-color: #da5047;
+  color: #1c1c1c;
+}
+
+.hero__btn--primary:hover {
+  filter: brightness(1.1);
+}
+
+.hero__btn--secondary {
+  margin-top: 15px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.hero__btn--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
