@@ -1,0 +1,116 @@
+/* Seccion Explore More Disney+ */
+/* Medidas tomadas del diseno (contenedor de 2000px de ancho) */
+
+.explore {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 43px 24px 86px;
+  background-color: #054553;
+  color: #fff;
+  font-family: "Avenir Next", "Nunito Sans", Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.explore__title {
+  font-size: 38px;
+  line-height: 52px;
+  font-weight: 400;
+}
+
+.explore__grid {
+  max-width: 1740px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 49px;
+}
+
+.explore__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 563 / 319;
+  object-fit: cover;
+}
+
+.explore__text {
+  margin-top: 37px;
+  padding: 0 46px;
+  font-size: 19px;
+  line-height: 31px;
+}
+
+.explore__link {
+  display: inline-block;
+  margin-top: 37px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  text-underline-offset: 1px;
+}
+
+.explore__link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Tablet y celular: carrusel deslizable con scroll-snap */
+@media (max-width: 900px) {
+  .explore {
+    padding: 40px 0 48px;
+  }
+
+  .explore__title {
+    padding: 0 16px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .explore__grid {
+    display: flex;
+    gap: 16px;
+    margin-top: 28px;
+    padding: 0 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 24px;
+    scrollbar-width: none;
+  }
+
+  .explore__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 60% en tablet: se ve una tarjeta y media */
+  .explore__item {
+    flex: 0 0 60%;
+    scroll-snap-align: start;
+  }
+
+  .explore .carousel__controls {
+    display: flex;
+    margin-top: 28px;
+  }
+
+  .explore__text {
+    margin-top: 20px;
+    padding: 0 12px;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .explore__link {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .explore__grid {
+    padding: 0 16px;
+    scroll-padding: 0 16px;
+  }
+
+  .explore__item {
+    flex: 0 0 85%;
+  }
+}
