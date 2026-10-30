@@ -68,3 +68,67 @@
   font-size: 15px;
   line-height: 1.25;
 }
+
+/* Responsive - Samir Rosero */
+
+/* Laptop: margen a los lados para que los posters no peguen al borde */
+@media (max-width: 1500px) {
+  .coming-soon {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Tablet y celular: carrusel deslizable con scroll-snap */
+@media (max-width: 900px) {
+  .coming-soon {
+    padding: 40px 0 44px;
+  }
+
+  .coming-soon__title {
+    margin-bottom: 24px;
+    padding: 0 16px;
+    font-size: 26px;
+  }
+
+  .coming-soon__list {
+    display: flex;
+    gap: 16px;
+    padding: 0 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 24px;
+    scrollbar-width: none;
+  }
+
+  .coming-soon__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 30% en tablet: se ven 3 posters y se asoma el siguiente */
+  .coming-soon__item {
+    flex: 0 0 30%;
+    scroll-snap-align: start;
+  }
+
+  .coming-soon__name {
+    margin-top: 14px;
+  }
+
+  .coming-soon .carousel__controls {
+    display: flex;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .coming-soon__list {
+    padding: 0 16px;
+    scroll-padding: 0 16px;
+  }
+
+  /* 62% en celular: un poster grande y se asoma el siguiente */
+  .coming-soon__item {
+    flex: 0 0 62%;
+  }
+}

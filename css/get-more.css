@@ -91,3 +91,73 @@
 .get-more__link:hover {
   filter: brightness(1.08);
 }
+
+/* Responsive - Samir Rosero */
+/* En pantallas medianas el texto ya no cabe sobre la imagen:
+   la imagen pasa a un bloque propio (::before) y el texto queda al lado o debajo */
+
+/* Laptop chica y tablet: imagen a la izquierda, texto a la derecha */
+@media (max-width: 1200px) {
+  .get-more {
+    aspect-ratio: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-image: none;
+  }
+
+  /* Solo se muestra la parte izquierda de la imagen (las tarjetas) */
+  .get-more::before {
+    content: "";
+    align-self: stretch;
+    min-height: 420px;
+    background: url("../img/more-background.jpeg") left center / cover no-repeat;
+  }
+
+  .get-more__content {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 40px 32px;
+  }
+
+  .get-more__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .get-more__link {
+    min-height: 40px;
+    margin-top: 24px;
+  }
+}
+
+/* Celular: imagen arriba y texto debajo */
+@media (max-width: 768px) {
+  .get-more {
+    grid-template-columns: 1fr;
+  }
+
+  .get-more::before {
+    min-height: 0;
+    aspect-ratio: 6 / 5;
+    max-height: 420px;
+  }
+
+  .get-more__content {
+    padding: 28px 20px 40px;
+  }
+
+  .get-more__title {
+    font-size: 26px;
+  }
+
+  .get-more__title br {
+    display: none;
+  }
+
+  .get-more__heading {
+    font-size: 18px;
+  }
+}
