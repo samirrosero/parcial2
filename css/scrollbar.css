@@ -1,0 +1,30 @@
+/* Scrollbar personalizado - Samir Rosero */
+/* Los colores los cambia js/scrollbar.js segun la seccion que se esta viendo */
+
+:root {
+  --scroll-track: #000;
+  --scroll-thumb: #da5047;
+}
+
+/* Chrome, Edge y Safari */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scroll-track);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--scroll-track);
+  border-radius: 999px;
+  background-color: var(--scroll-thumb);
+}
+
+/* Firefox: no soporta ::-webkit-scrollbar, usa scrollbar-color */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  }
+}
